@@ -23,8 +23,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
@@ -41,7 +39,7 @@ try
 catch (Exception ex)
 {
     var logger = services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "An error occoured duging migration");
+    logger.LogError(ex, "An error occured during migration");
 }
 
 app.Run();
